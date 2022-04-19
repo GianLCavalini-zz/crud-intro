@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Create } from "./pages/CREATE";
+import { Read } from "./pages/READ";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Read />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+// Verbos!
+// GET - puxar infos
+// POST - criar/postar infos
+// PUT e PATCH - editar
+// DELETE - remover
+
+// APENAS INFORMATIVOS!
+
+// CRUD - Create Read Update Delete
